@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOT</title>
+    <link rel="stylesheet" type="text/css" href="static/css/new.css">
+  </head>
+    <body style="background-color:dark-blue">
+    <div id="container"></div>
+      <h1>Hello, type something to begin!</h1>
+<div class="second">
+<div class="third">
+    <center><p style ="color:white">
+
+<form method='post'>
+<b>ChatBot 1</b>
+{% for bot12 in bot1 %}
+<p>{{bot12}}</p>
+{% endfor %}<br>
+            </p></center>
+<center>
+<label for="Human">Human</label>
+    <input type="text" name="human" id="speechToText" placeholder="Speak or type something" onclick="record()">
+     <script type="text/javascript">
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+
+            recognition.onresult = function(event) {
+                // console.log(event);
+                document.getElementById('speechToText').value = event.results[0][0].transcript;
+            }
+            recognition.start();
+
+        }
+    </script></form>
+
+    </center>
+      </div>
+      </div>
+  </body>
+</html>
